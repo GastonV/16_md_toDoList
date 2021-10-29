@@ -6,6 +6,7 @@ module.exports = {
   entry: ['./src/scripts.ts', './src/styles.scss'],
   mode: 'development',
   devServer: {
+    watchFiles: ['./src/scripts.ts', './src/styles.scss','./src/index.html'],
     port: 3000,
     historyApiFallback: true,
     client: {
