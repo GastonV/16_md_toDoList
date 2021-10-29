@@ -1,5 +1,4 @@
 @import "./assets/styles/reset.scss";
-//@import "./assets/styles/flexboxgrid.scss";
 @import "./assets/styles/globals.scss";
 @import "./assets/styles/helper.scss";
 
@@ -9,7 +8,7 @@
   max-width: 700px;
   margin: 0 auto;
   justify-self: center;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr auto;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -18,6 +17,7 @@
   box-shadow: 0px 4px 15px #b4b4b40d;
   border-radius: 12px;
   background-color: var(--prime-background);
+  gap: 20px;
 
 }
 
@@ -29,11 +29,11 @@
 }
 
 .toDo__inputfield {
-  background-color: var(--prime-white);
+  background-color: var(--prime-input);
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
-  color: $light-input-font;
+  color: var(--prim);
   border-radius: 4px;
   padding: 7px 10px;
 }
@@ -41,29 +41,31 @@
 .btn_add {
   color: var(--prime-white);
   background-color: var(--prime-button);
-  width: 60px;
   height: 36px;
   border-radius: 4px;
   padding: 8px 14px;
   font-weight: 600;
   font-size: 16px;
   border: none;
+  margin-right: 20px;
+
+  &:hover {
+    background-color: var(--prime-hover-btn);
+  }
 }
 
 .taskList {
+  max-width: 400px;
+  min-width: 260px;
   display: flex;
   flex-direction: column;
-}
-
-.listItem {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-
+  align-content: flex-end;
 }
 
 .js__delete {
-  flex-wrap: nowrap;
+  display: flex;
+  justify-content: flex-end;
   padding-left: 20px;
+  color: var(--prime-font);
   fill: var(--prime-background);
 }

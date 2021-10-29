@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const btn__add: HTMLButtonElement = document.querySelector('.btn_add');
+const btn__add: HTMLButtonElement = document.querySelector('.js-btn_add');
 const readTask: HTMLInputElement = document.querySelector('.js__input');
 // eslint-disable-next-line no-unused-vars
 const svgPath = './assets/images/garbage.svg';
@@ -7,8 +7,6 @@ const svgItem = '<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xml
 const savedTasks: string[] = [];
 
 const listContainsTask = (taskName: string): boolean => savedTasks.includes(taskName);
-const svg = document.createElement('p');
-const tag = document.createElement('div');
 
 btn__add.addEventListener('click', (e) => {
   e.preventDefault();
@@ -22,9 +20,12 @@ btn__add.addEventListener('click', (e) => {
 
   const listStack = document.querySelector('.js__taskList');
   const taskText = document.createTextNode(inputText);
+  const svg = document.createElement('p');
+  const tag = document.createElement('div');
 
-  svg.innerHTML = svgItem;
   svg.classList.add('js__delete');
+  svg.innerHTML = svgItem;
+  tag.classList.add('js__delete', 'margin--bottom--7');
   svg.setAttribute('src', svgPath);
   tag.classList.add('listItem');
   tag.appendChild(taskText);
@@ -43,6 +44,6 @@ const themeSwitcherButton = document.querySelector('.js-theme-switcher');
 
 themeSwitcherButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const themeChange = document.querySelector('.js-theme-switcher');
+  const themeChange = document.querySelector('.theme');
   themeChange.classList.toggle('dark__theme');
 });

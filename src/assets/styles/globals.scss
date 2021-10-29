@@ -13,7 +13,7 @@ svg {
     --prime-button: #1676F3;
     --prime-font: rgba(28, 48, 74, 0.5);
     --prime-garbage: #323232;
-  
+    --prime-hover-btn: #254672;
 }
 
 .dark__theme {
@@ -25,21 +25,5 @@ svg {
     --prime-button: #1676F3;
     --prime-font: #DADADA;
     --prime-garbage: #FFFFFF;
-   
+    --prime-hover-btn: #7cabe9;
 }
-
-$white: #FFFFFF;
-$black: #000000;
-$placeholder: #87919E;
-
-$ligh-input: #F2F2F2;
-$light-input-font:rgba(28, 48, 74, 0.5);
-$light-button: #1676F3;
-$light-font: #575767;
-$light-garbage: #323232;
-
-
-$dark-background: #1E1F25;
-$dark-font:#DADADA;
-$dark-input: $ligh-input;
-$dark-garbage: $white;
