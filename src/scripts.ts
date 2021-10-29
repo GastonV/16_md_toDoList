@@ -1,32 +1,48 @@
 /* eslint-disable camelcase */
 const btn__add: HTMLButtonElement = document.querySelector('.btn_add');
 const readTask: HTMLInputElement = document.querySelector('.js__input');
-
-const deleteTask = document.querySelector('.js__delete');
 // eslint-disable-next-line no-unused-vars
 const svgPath = './assets/images/garbage.svg';
+const svgItem = '<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4H1V16ZM14 1H10.5L9.5 0H4.5L3.5 1H0V3H14V1Z" /></svg>';
 const savedTasks: string[] = [];
 
-btn__add.addEventListener('click', () => {
-  const tag = document.createElement('p');
-  const svg = document.createElement('img');
-  const listStack = document.querySelector('.js__taskList');
-  const taskText = document.createTextNode(readTask.value);
+const listContainsTask = (taskName: string): boolean => savedTasks.includes(taskName);
+const svg = document.createElement('p');
+const tag = document.createElement('div');
 
+btn__add.addEventListener('click', (e) => {
+  e.preventDefault();
+  const inputText = readTask.value;
+  if (!inputText) {
+    return;
+  }
+  if (listContainsTask(inputText)) {
+    return;
+  }
+
+  const listStack = document.querySelector('.js__taskList');
+  const taskText = document.createTextNode(inputText);
+
+  svg.innerHTML = svgItem;
   svg.classList.add('js__delete');
   svg.setAttribute('src', svgPath);
-  tag.appendChild(svg);
-  tag.setAttribute('width', '100');
+  tag.classList.add('listItem');
   tag.appendChild(taskText);
+  tag.appendChild(svg);
 
-  savedTasks.unshift(readTask.value);
+  savedTasks.unshift(inputText);
   listStack.insertBefore(tag, listStack.firstElementChild);
-  tag.addEventListener('click', () => {
+  readTask.value = '';
+  svg.addEventListener('click', () => {
+    savedTasks.splice(savedTasks.indexOf(tag.textContent), 1);
     tag.remove();
   });
-
-  // readTask.value = "";
 });
 
+const themeSwitcherButton = document.querySelector('.js-theme-switcher');
 
-console.log(savedTasks);
+themeSwitcherButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const themeChange = document.querySelector('.js-theme-switcher');
+  themeChange.classList.toggle('dark__theme');
+});

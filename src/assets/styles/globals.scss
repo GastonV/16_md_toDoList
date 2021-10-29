@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&family=Poppins:wght@400;600&display=swap');
 
+svg {
+    fill: var(--prime-garbage);
+}
+
+:root {
+    --prime-white: #FFFFFF;
+    --prime-black: #000000;
+    --prime-background: #FFFFFF;
+    --prime-placeholder: #87919E;
+    --prime-input: #F2F2F2;
+    --prime-button: #1676F3;
+    --prime-font: rgba(28, 48, 74, 0.5);
+    --prime-garbage: #323232;
+  
+}
+
+.dark__theme {
+    --prime-white: #FFFFFF;
+    --prime-black: #000000;
+    --prime-background: #1E1F25;
+    --prime-placeholder: #87919E;
+    --prime-input: #F2F2F2;
+    --prime-button: #1676F3;
+    --prime-font: #DADADA;
+    --prime-garbage: #FFFFFF;
+   
+}
+
 $white: #FFFFFF;
 $black: #000000;
 $placeholder: #87919E;
@@ -13,6 +41,5 @@ $light-garbage: #323232;
 
 $dark-background: #1E1F25;
 $dark-font:#DADADA;
-$dark-heading:$white;
 $dark-input: $ligh-input;
 $dark-garbage: $white;

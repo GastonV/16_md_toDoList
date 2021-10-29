@@ -1,16 +1,15 @@
 @import "./assets/styles/reset.scss";
-@import "./assets/styles/flexboxgrid.scss";
+//@import "./assets/styles/flexboxgrid.scss";
 @import "./assets/styles/globals.scss";
 @import "./assets/styles/helper.scss";
 
-body {
-  margin: 0 auto;
-}
 
 .toDo__container {
   display: grid;
-  grid-template-columns: 500px;
-  grid-template-rows: auto;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-self: center;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -18,28 +17,30 @@ body {
   border-radius: 1px solid #292957;
   box-shadow: 0px 4px 15px #b4b4b40d;
   border-radius: 12px;
+  background-color: var(--prime-background);
 
 }
 
 .heading1 {
-  color: $black;
+  color: var(--prime-font);
   font-weight: 800;
   font-size: 56px;
   padding: 50px 60px;
 }
 
 .toDo__inputfield {
-  background-color: $ligh-input;
+  background-color: var(--prime-white);
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
   color: $light-input-font;
   border-radius: 4px;
+  padding: 7px 10px;
 }
 
 .btn_add {
-  color: $white;
-  background-color: $light-button;
+  color: var(--prime-white);
+  background-color: var(--prime-button);
   width: 60px;
   height: 36px;
   border-radius: 4px;
@@ -47,4 +48,22 @@ body {
   font-weight: 600;
   font-size: 16px;
   border: none;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.js__delete {
+  flex-wrap: nowrap;
+  padding-left: 20px;
+  fill: var(--prime-background);
 }
