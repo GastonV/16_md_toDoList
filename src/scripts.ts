@@ -14,7 +14,7 @@ btn__add.addEventListener('click', (e) => {
   if (!inputText) {
     return;
   }
-  if (listContainsTask(inputText)) {
+  if (listContainsTask(inputText) && inputText.length <= 25) {
     return;
   }
 
@@ -23,11 +23,10 @@ btn__add.addEventListener('click', (e) => {
   const svg = document.createElement('p');
   const tag = document.createElement('div');
 
-  svg.classList.add('js__delete');
+  svg.classList.add('.js__delete', 'js__pdelete');
   svg.innerHTML = svgItem;
-  tag.classList.add('js__delete', 'margin--bottom--7');
+  tag.classList.add('js__delete', 'margin--bottom--7', 'listItem');
   svg.setAttribute('src', svgPath);
-  tag.classList.add('listItem');
   tag.appendChild(taskText);
   tag.appendChild(svg);
 

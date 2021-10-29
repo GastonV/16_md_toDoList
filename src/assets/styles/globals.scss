@@ -10,10 +10,11 @@ svg {
     --prime-background: #FFFFFF;
     --prime-placeholder: #87919E;
     --prime-input: #F2F2F2;
-    --prime-button: #1676F3;
     --prime-font: rgba(28, 48, 74, 0.5);
     --prime-garbage: #323232;
     --prime-hover-btn: #254672;
+    --prime-theme: #1676F3;
+    --prime-border: #323232;
 }
 
 .dark__theme {
@@ -26,4 +27,6 @@ svg {
     --prime-font: #DADADA;
     --prime-garbage: #FFFFFF;
     --prime-hover-btn: #7cabe9;
+    --prime-theme: #87919E;
+    --prime-border: #87919E;
 }
