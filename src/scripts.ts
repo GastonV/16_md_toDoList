@@ -11,6 +11,7 @@ const listContainsTask = (taskName: string): boolean => savedTasks.includes(task
 btn__add.addEventListener('click', (e) => {
   e.preventDefault();
   const inputText = readTask.value;
+
   if (!inputText) {
     return;
   }
@@ -31,7 +32,7 @@ btn__add.addEventListener('click', (e) => {
 
   savedTasks.unshift(inputText);
   listStack.insertBefore(tag, listStack.firstElementChild);
-  readTask.value = '';
+  readTask.value = ''; // reset input
   svg.addEventListener('click', () => {
     savedTasks.splice(savedTasks.indexOf(tag.textContent), 1);
     tag.remove();
